@@ -15,4 +15,10 @@
         Hide()
         deposit.ShowDialog()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim withdraw As New Withdraw
+        Hide()
+        withdraw.ShowDialog()
+    End Sub
 End Class

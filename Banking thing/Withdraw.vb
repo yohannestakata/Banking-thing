@@ -1,13 +1,19 @@
-﻿Public Class Deposit
+﻿Public Class Withdraw
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim amount As Double
-        Dim success As Double = Double.TryParse(TextBox1.Text, amount)
+        Dim success As Boolean = Double.TryParse(TextBox1.Text, amount)
+
         If success Then
-            Account.accountBalance += amount
-            MsgBox("Amount added to account balace")
+            If Account.accountBalance < amount Then
+                MsgBox("Insufficient funds")
+            Else
+                Account.accountBalance -= amount
+                MsgBox("Balance deducted")
+            End If
         Else
             MsgBox("Please enter a valid amount (numbers only)")
         End If
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

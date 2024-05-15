@@ -7,9 +7,11 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim menu As New Menu
 
-        If TextBox1.Text = "1234" Then
+        If TextBox1.Text = pass Then
             Hide()
             menu.ShowDialog()
+        Else
+            MsgBox("Incorrect password")
         End If
     End Sub
 
